@@ -6,7 +6,11 @@ document.getElementById('waForm').addEventListener('submit', function (event) {
     const link = document.getElementById('link').value;
 
     if (!phone || !message) {
-        alert("Nomor HP dan Pesan wajib diisi.");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Nomor HP dan Pesan wajib diisi!',
+        });
         return;
     }
 
@@ -18,6 +22,14 @@ document.getElementById('waForm').addEventListener('submit', function (event) {
 
     document.getElementById('generatedLink').innerHTML = `<a href="${waLink}" target="_blank">${waLink}</a>`;
     document.querySelector('.result').style.display = 'block';
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Link berhasil dibuat!',
+        text: 'Link WA sudah siap digunakan.',
+        showConfirmButton: false,
+        timer: 1500
+    });
 });
 
 // Fungsi untuk menyalin link
@@ -32,5 +44,11 @@ document.getElementById('copyBtn').addEventListener('click', function () {
     document.execCommand('copy');
     document.body.removeChild(tempInput);
 
-    alert("Link berhasil disalin!");
+    Swal.fire({
+        icon: 'success',
+        title: 'Link disalin!',
+        text: 'Link berhasil disalin ke clipboard.',
+        showConfirmButton: false,
+        timer: 1500
+    });
 });
