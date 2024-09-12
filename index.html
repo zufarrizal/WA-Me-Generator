@@ -90,10 +90,12 @@
         }
 
         .result a {
-            color: #25d366;
-            text-decoration: none;
-            font-weight: bold;
+            display: inline-block;
+            word-wrap: break-word;
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
+
 
         .copy-button,
         .reset-button,
@@ -110,6 +112,13 @@
 
         .copy-button:hover,
         .reset-button:hover,
+        .result a {
+            display: inline-block;
+            word-wrap: break-word;
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+
         .qr-button:hover {
             background-color: #1eb058;
         }
