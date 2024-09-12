@@ -252,7 +252,6 @@
             const phonePattern = /^[1-9]\d{7,14}$/;
 
             if (phone === "") {
-                resultDiv.innerHTML = "<p class='error'>Nomor HP wajib diisi!</p>";
                 showNotification('Nomor HP wajib diisi!');
                 return;
             } else if (!phonePattern.test(phone)) {
